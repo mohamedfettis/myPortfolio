@@ -1,6 +1,5 @@
 :root{
-    --padding:1.7% 7%;
-    
+    --padding:1.5% 7%;
 }
 html {
     scroll-behavior: smooth;
@@ -115,18 +114,29 @@ span{
     text-align: left;
 }
 
+
 /* Style pour la photo à droite */
 #photo {
-    flex: 1;
     display: flex;
+    align-items: center;
     justify-content: center;
+    position: relative;
+    width: 50%;
+    height: 90vh;
+}
+#background-img {
+    position: absolute;
+    width: 45rem;
 }
 
+
 #photo img {
-    max-width: 65%; /* Limite la largeur de l'image */
-    height: auto; /* Maintient les proportions */
-    border-radius: 50%; /* Optionnel : arrondir les coins */
-    box-shadow:2px 9px 50px 2px rgba(212,175,55,0.76)
+    max-width: 60%; 
+    z-index: 90;
+    margin-left: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+    shadow:0px 10px 16px -6px rgba(0,0,0,0.9);
 
 
 }
@@ -142,7 +152,7 @@ span{
         height: 100vh;
         justify-content: center;
         align-items: center;
-    }
+    } }
 
 
     #info, #photo {
@@ -153,9 +163,11 @@ span{
     #photo img {
         max-width: 60%;
         margin-top: 20px;
+        filter: drop-shadow(0px 4px 8px rgba(212, 175, 55, 0.5)); /* Ombre suivant les contours visibles */
+
     }
-   
-   
+    #background-img{
+   display: none;
 }
 
 /*-------------------------------------------------section2----------------------------------------*/
@@ -342,8 +354,7 @@ span{
     
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input, .contact-form textarea {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ddd;
@@ -351,8 +362,7 @@ span{
     outline: none;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form input:focus, .contact-form textarea:focus {
     border-color: #D4AF37;
 }
 
