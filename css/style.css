@@ -63,6 +63,9 @@ span{
     background: linear-gradient(to right, #D4AF37 , #989d80);
     border-radius: 5%;
 }
+.phone{
+    display: none;
+}
 
 
 
@@ -85,6 +88,13 @@ span{
     }
     .navigation a{
         font-size: 0.8rem;
+    }
+    .pc {
+        display: none;
+    }
+    .phone{
+        display: flex;
+        
     }
 
    
