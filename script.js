@@ -1,8 +1,8 @@
-// Récupère le bouton et le menu
-const menuToggle = document.getElementById("menuToggle");
-const menu = document.getElementById("menu");
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-// Ajoute un événement au clic du bouton pour afficher/masquer le menu
-menuToggle.addEventListener("click", function () {
-  menu.classList.toggle("show"); // Ajoute ou enlève la classe "show"
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('bx-x'); 
+    navbar.classList.toggle('active'); 
+    console.log('Menu icon clicked');
 });

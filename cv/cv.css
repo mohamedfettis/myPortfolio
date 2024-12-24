@@ -1,0 +1,116 @@
+:root{
+    --colorPrimary: #d4af37;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.cv-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right,var(--colorPrimary), #D4AF37);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.cv-header .photo img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-right: 2rem;
+    border: 5px solid #fff;
+}
+
+.cv-header .intro h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.cv-content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cv-content section {
+    margin-bottom: 2rem;
+}
+
+.cv-content h2 {
+    border-bottom: 2px solid var(--colorPrimary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--colorPrimary);
+}
+
+.cv-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cv-content ul li {
+    background: #fff;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-left: 4px solid var(--colorPrimary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cv-content p {
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+footer a {
+    
+    text-decoration: none;
+    color: var(--colorPrimary);
+    font-weight: bold;
+}
+/* Style de la section */
+#competences {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+}
+
+#competences h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Conteneur des icônes */
+.competences-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Style des icônes */
+.competences-container i {
+    font-size: 3rem;
+    color: #000; /* Couleur noire par défaut */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition douce */
+}
+
+.competences-container i:hover {
+    color: var(--colorPrimary); /* Remplacez par la couleur souhaitée */
+    transform: scale(1.1); /* Légère augmentation de la taille au survol */
+}
+

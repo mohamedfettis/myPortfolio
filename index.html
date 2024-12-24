@@ -1,240 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio de Mohamed Amokrane Fettis, développeur web et designer UI/UX, spécialisé en intégration et design web. Découvrez mes projets en HTML, CSS, JavaScript, et mes compétences en création d'expériences utilisateur modernes et intuitives."
-    />
-    <meta
-      name="keywords"
-      content="Mohamed Amokrane Fettis, développeur web, UI/UX designer, intégration web, design web, HTML, CSS, JavaScript, portfolio développeur, expérience utilisateur, projets web, front-end, développement web"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="icon" href="./icons/icon-nav.ico" type="image/x-icon" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- google-font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Portfolio FETTIS</title>
+</head>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">
+            Mohamed <span>FETTIS</span>
+        </a>
+        <a href="#home"  class="logo-mobile">M <span>F</span> </a>
 
-    <title>Portfolio - FETTIS Mohamed amokrane</title>
-  </head>
-  <body>
-    <header id="header">
-      <nav class="navigation">
-        <div class="logo">
-          <h1 class="pc">Mohamed <span>Fettis</span></h1>
-          <h1 class="phone">M <span>F</span></h1>
-        </div>
-
-        <!-- Bouton hamburger pour mobile -->
-        <button class="menu-toggle" id="menuToggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-
-        <ul id="menu">
-          <li><a href="#intro">À propos</a></li>
-          <li><a href="#skills">Compétences</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#services">Services</a>
+            <a href="./cv/cv.html">Curriculum Vitae</a>
+        </nav>
+        <button class="gradient-btn"> Contact Me</button>
     </header>
 
-    <main>
-      <section id="intro">
-        <div id="info">
-          <div id="info1">
-            <p class="greeting" style="color: #d4af37">Hello, my name is</p>
-            <h1 class="name">Mohamed FETTIS</h1>
-            <p class="profession" style="color: #bdc3c7">
-              I'm a Web Designer and Integration Specialist
+    <div class="container">
+        <section class="home" id="home">
+            <div class="home-content">
+                <h1>Hi, It's <span>Fettis</span></h1>
+                <h3>I'm Web Developer</h3>
+                <p>I am a graduate of a professional degree in Web Integration and Design I specialize in creating responsive, user-friendly websites using HTML, CSS, JavaScript, and design tools like Figma. My goal is to deliver high-quality web solutions that combine functionality with aesthetics.</p>
+                <div class="social-icons">
+                    <a href="#">
+                        <i class='bx bxl-github'></i>
+                    <a href="#">
+                        <i class='bx bxl-linkedin-square'></i>                    </a>
+                    <a href="#">
+                        <i class='bx bxl-instagram-alt' ></i>                    </a>
+                    <a href="#">
+                        <i class='bx bxs-x-square'></i>                    </a>
+                </div>
+                <div class="btn-group">
+                    <a href= "#" class="btn">Hire</a>
+                    <a href="#" class="btn">Contact</a>
+                </div>
+            </div>
+            <div class="home-img">
+                <img src="./imgs/d4af37.png" alt="my photo ID">
+            </div>
+
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-img">
+                <i class='bx bxs-user-check'></i>
+            </div>
+            <div class="about-content">
+                <h3>About <span>Me</span></h3>
+                <p>
+                    Hello, my name is Mohamed Amokrane Fettis, and I am a graduate of a professional degree in Web Integration and Design.
+                    specialize in creating responsive, user-friendly websites using HTML, CSS, JavaScript, and design tools like Figma. My goal is to deliver high-quality web solutions that combine functionality with aesthetics.
+                    Feel free to explore my portfolio to see my work and achievements! 
+                </p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <h2 class="heading" >My <span>Services</span></h2>
+            <div class="services-container">
+                <div class="service-box">
+                    <div class="service-info">
+                        <i class='bx bxl-figma'></i>
+                        <h4>UI/UX Design</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora recusandae repudiandae quo libero. Hic, blanditiis consectetur. Accusamus, beatae a obcaecati quisquam nesciunt voluptas corporis blanditiis, sapiente odio rem atque.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-info">
+                        <i class='bx bx-code-alt'></i>
+                        <h4>Frontend devlopment</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora recusandae repudiandae quo libero. Hic, blanditiis consectetur. Accusamus, beatae a obcaecati quisquam nesciunt voluptas corporis blanditiis, sapiente odio rem atque.</p>
+                    </div>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-info">
+                        <i class='bx bx-code-alt'></i>
+                        <h4>Task Automation</h4>
+                        <p>I provide task automation services to streamline workflows, save time, and enhance productivity. Using modern tools and programming, I create efficient solutions tailored to specific needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="projects" id="projects">
+            <h2 class="heading">My <span>Projects</span></h2>
+            <div class="project-box">
+                <div class="project-card">
+                    <img src="./imgs/cart-visite-recto.png" alt="">
+                    <h3>Project 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora recusandae repudiandae quo libero. Hic, blanditiis consectetur. Accusamus, beatae a obcaecati quisquam nesciunt voluptas corporis blanditiis, sapiente odio rem atque.</p>
+                    <div class="btn">Review Project</div>
+                </div>
+
+                <div class="project-card">
+                    <img src="./imgs/form.png" alt="">
+                    <h3>Project 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora recusandae repudiandae quo libero. Hic, blanditiis consectetur. Accusamus, beatae a obcaecati quisquam nesciunt voluptas corporis blanditiis, sapiente odio rem atque.</p>
+                    <div class="btn">Review Project</div>
+                </div>
+
+                <div class="project-card">
+                    <img src="" alt="">
+                    <h3>Project 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora recusandae repudiandae quo libero. Hic, blanditiis consectetur. Accusamus, beatae a obcaecati quisquam nesciunt voluptas corporis blanditiis, sapiente odio rem atque.</p>
+                    <div class="btn">Review Project</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me</span></h2>
+            <form action="#">
+                <div class="input-group">
+                    <div class="input-box">
+                        <input type="text" id="name" placeholder="Full Name" >
+                        <input type="email" name="email" id="email" placeholder="Email">
+
+                    </div>
+                    <div class="input-box">
+                        <input type="number" id="number" placeholder="Phone number">
+                        <input type="text" placeholder="Subject">
+                    </div>
+
+                </div>
+                <div class="input-group2">
+                    <textarea rows="10" name="" id="" placeholder="Your Message"></textarea>
+                    <input type="submit" value="send message" class="btn">
+                </div>
+
+            </form>
+
+                  
+        </section>
+
+        <footer class="footer">
+            <div class="social-icons">
+                <a href="#">
+                    <i class='bx bxl-github'></i>
+                <a href="#">
+                    <i class='bx bxl-linkedin-square'></i>
+                </a>
+                <a href="#">
+                    <i class='bx bxl-instagram-alt' ></i>                    
+                </a>
+                <a href="#">
+                    <i class='bx bxs-x-square'></i>                    
+                </a>
+            </div>
+
+            <ul class="list">
+                
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="./cv/cv.html">Curriculum Vitae</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <p class="copyright">
+                &copy; 2024 Mohamed Fettis. All rights reserved.
             </p>
-          </div>
 
-          <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"
-              ><img src="./icons/facebook.png" alt="Facebook"
-            /></a>
-            <a href="https://twitter.com" target="_blank"
-              ><img src="./icons/twitter.png" alt="Twitter"
-            /></a>
-            <a href="https://linkedin.com" target="_blank"
-              ><img src="./icons/linkedin.png" alt="LinkedIn"
-            /></a>
-            <a href="https://linkedin.com" target="_blank"
-              ><img src="./icons/instagram.png" alt="LinkedIn"
-            /></a>
-          </div>
-        </div>
+        </footer>
+        <script src="./script.js"></script>
+    </div>
 
-        <div id="photo">
-          <img
-            src="./imgs/photoID.png"
-            alt="photo FETTIS Mohamed amokrane"
-            srcset=""
-          />
-          <svg
-            id="background-img"
-            viewBox="0 0 200 200"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill="#D4AF37"
-              id="rotate"
-              d="M28.2,-38.2C40.9,-29.6,58.6,-27.2,62.7,-19.3C66.9,-11.3,57.4,2.1,54.4,19.7C51.5,37.2,55,58.9,47,64.9C39,70.8,19.5,61.1,0.5,60.3C-18.5,59.6,-36.9,67.9,-45.4,62.1C-53.9,56.3,-52.4,36.4,-46.9,22.5C-41.3,8.6,-31.7,0.7,-25.3,-5C-19,-10.7,-16,-14.2,-12.3,-25.8C-8.6,-37.4,-4.3,-57,1.7,-59.4C7.7,-61.7,15.5,-46.9,28.2,-38.2Z"
-              transform="translate(100 100)"
-            />
-          </svg>
-        </div>
-      </section>
-
-      <section id="skills">
-        <div id="text">
-          <h2 style="text-align: center; display: inline-block">My Skills</h2>
-        </div>
-
-        <div id="img-skills">
-          <img src="./imgs/icons8-skill-150.png" alt="critical-thinking--v1" />
-        </div>
-
-        <div id="icons-skills">
-          <img
-            src="./icons/adobeindesignicon_84151.png"
-            alt="indesign-adobe"
-            srcset=""
-          />
-          <img src="./icons/css-icon.png" alt="css" srcset="" />
-          <img src="./icons/figma_logo_icon_147289.png" alt="figma" srcset="" />
-          <img src="./icons/html-icon.png" alt="html" srcset="" />
-          <img
-            src="./icons/illustrator-icon.png"
-            alt="illustrator-icon"
-            srcset=""
-          />
-          <img
-            src="./icons/javascript-icon.png"
-            alt="javascript-icon"
-            srcset=""
-          />
-          <img src="./icons/nodejs-icon.png" alt="nodejs-icon" srcset="" />
-          <img src="./icons/php-icon.png" alt="php-icon" srcset="" />
-          <img src="./icons/react-icon.png" alt="react-icon" srcset="" />
-          <img
-            src="./icons/wordpress-icon.png"
-            alt="wordpress-icon"
-            srcset=""
-          />
-          <img
-            src="./icons/photoshop-icon.png"
-            alt="photoshop-icon"
-            srcset=""
-          />
-        </div>
-      </section>
-
-      <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-cards">
-          <div class="project-card">
-            <img src="./imgs/cart-visite-recto.png" alt="cart-visite-recto 1" />
-            <h3>Création de l'identité visuelle de Sun Power</h3>
-            <p>
-              J'ai conçu l'identité visuelle de Sun Power, spécialisée dans
-              l'énergie solaire, avec un logo, une charte graphique, et des
-              supports comme une carte de visite et un dépliant. Ce projet met
-              en avant les valeurs de durabilité et d'efficacité énergétique de
-              l'entreprise, renforçant son image de marque dans le secteur des
-              énergies renouvelables.
-            </p>
-          </div>
-          <div class="project-card">
-            <img src="./imgs/form.png" alt="formulaire" />
-            <h3>
-              Conception d'un formulaire de contrat d'apprentissage pour le
-              Ministère du Travail
-            </h3>
-            <p>
-              Dans ce projet, j'ai développé un formulaire de contrat
-              d'apprentissage structuré et conforme aux exigences du Ministère
-              du Travail. Ce formulaire inclut des sections claires et un design
-              épuré pour faciliter la saisie des informations nécessaires pour
-              l'employeur, l'apprenti, et le maître d'apprentissage. Utilisant
-              HTML et CSS, j'ai veillé à l'accessibilité et à la lisibilité du
-              document, permettant une utilisation efficace et intuitive pour
-              les utilisateurs.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>
-          Feel free to reach out for collaborations or just a friendly hello 👋
-        </p>
-
-        <div class="contact-container">
-          <!-- Formulaire de contact -->
-          <form
-            class="contact-form"
-            method="post"
-            action="https://getform.io/f/bdrrnpgb"
-          >
-            <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
-
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Your Message"
-              required
-            ></textarea>
-
-            <button type="submit">Send Message</button>
-          </form>
-
-          <!-- Informations de contact et réseaux sociaux -->
-          <div class="contact-info">
-            <h3>Let's Connect</h3>
-            <p>Email: <a href="mailto:moh.fts98@gmail.com">Email</a></p>
-            <p>Phone: <a href="tel:+33 761553940">Phone</a></p>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Mohamed Fettis. All rights reserved.</p>
-      </div>
-    </footer>
-    <script src="./script.js"></script>
-  </body>
+    
+</body>
 </html>
