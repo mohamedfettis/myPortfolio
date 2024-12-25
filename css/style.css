@@ -29,9 +29,10 @@ body{
 header{
     position: fixed;
     width: 100vw;
+    border-bottom: 2px solid #d4af37;
     top: 0;
     left: 0;
-    padding: 4rem 15%;
+    padding: 2rem 10%;
     background-color: rgba (0,0,0,0.3);
     backdrop-filter: blur(10px);
     display: flex;
@@ -47,7 +48,7 @@ header{
 
 }
 .logo{
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--text-color);
     font-weight: 800;
     cursor: pointer;
@@ -544,7 +545,7 @@ footer ul {
 
    .contact form{
         flex-direction: column;
-        gap: 2rem;
+        gap: 5rem;
         width: 80vw;
    
    }
@@ -554,7 +555,11 @@ footer ul {
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        width: 80vw;
+        width: 100vw;
+
+   }
+   .bxs-user-check{
+        font-size: 15rem;
    }
 
     
