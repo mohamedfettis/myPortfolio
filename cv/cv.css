@@ -20,6 +20,14 @@ body {
     padding: 2rem 1rem;
     text-align: center;
 }
+@media (max-width: 1285px) {
+    .cv-header {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
 .cv-header .photo img {
     border-radius: 50%;
@@ -81,7 +89,7 @@ footer a {
     color: var(--colorPrimary);
     font-weight: bold;
 }
-/* Style de la section */
+
 #competences {
     text-align: center;
     padding: 2rem 1rem;
@@ -94,7 +102,7 @@ footer a {
     color: #333;
 }
 
-/* Conteneur des icônes */
+
 .competences-container {
     display: flex;
     flex-wrap: wrap;
@@ -102,15 +110,14 @@ footer a {
     gap: 1.5rem;
 }
 
-/* Style des icônes */
+
 .competences-container i {
     font-size: 3rem;
-    color: #000; /* Couleur noire par défaut */
-    transition: color 0.3s ease, transform 0.3s ease; /* Transition douce */
+    color: #000; 
+    transition: color 0.3s ease, transform 0.3s ease; 
 }
 
 .competences-container i:hover {
-    color: var(--colorPrimary); /* Remplacez par la couleur souhaitée */
-    transform: scale(1.1); /* Légère augmentation de la taille au survol */
+    color: var(--colorPrimary); 
+    transform: scale(1.1); 
 }
-
