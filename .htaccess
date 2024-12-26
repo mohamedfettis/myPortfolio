@@ -1,0 +1,7 @@
+# Activation du module de réécriture
+RewriteEngine On
+
+# Réécriture pour cacher cv.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^cv$ /cv/cv.html [L]

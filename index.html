@@ -22,18 +22,19 @@
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#skills-section">Skills</a>
             <a href="#services">Services</a>
             <a href="#projects">Projects</a>
             <a href="./cv/cv.html">Curriculum Vitae</a>
         </nav>
-        <button class="gradient-btn"> Contact Me</button>
+        <button class="gradient-btn" href="#contact" > Contact Me</button>
     </header>
 
     <div class="container">
         <section class="home" id="home">
             <div class="home-content">
                 <h1>Hi, It's <span>Fettis</span></h1>
-                <h3>I'm Web Developer</h3>
+                <h3>I'm  <span>Web Developer</span> </h3>
                 <p>I am a graduate of a professional degree in Web Integration and Design I specialize in creating responsive, user-friendly websites using HTML, CSS, JavaScript, and design tools like Figma. My goal is to deliver high-quality web solutions that combine functionality with aesthetics.</p>
                 <div class="social-icons">
                     <a href="https://github.com/mohamedfettis" target="_blank">
@@ -74,6 +75,15 @@
             </div>
         </section>
 
+        <section style="min-height: auto;" id="skills-section" class="skills-container">
+            <h2>My <span>Skills</span></h2>
+            <ul id="skills-list">
+                <!-- Les compétences ajoutées apparaîtront ici via JavaScript -->
+            </ul>
+        </section>
+        
+        
+
         <section class="services" id="services">
             <h2 class="heading" >My <span>Services</span></h2>
             <div class="services-container">
@@ -95,8 +105,7 @@
 
                 <div class="service-box">
                     <div class="service-info">
-                        <i class='bx bx-code-alt'></i>
-                        <h4>Task Automation</h4>
+                        <i class='bx bxl-python' ></i>                        <h4>Task Automation</h4>
                         <p>I provide task automation services to streamline workflows, save time, and enhance productivity. Using modern tools and programming, I create efficient solutions tailored to specific needs.</p>
                     </div>
                 </div>
@@ -113,42 +122,37 @@
                 </div>
 
                 <div class="project-card">
-                    <img src="./imgs/form.png" alt="">
+                    <img src="./imgs/Capture d’écran du 2024-12-25 19-39-02.png" alt="">
                     <h3>Project 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora recusandae repudiandae quo libero. Hic, blanditiis consectetur. Accusamus, beatae a obcaecati quisquam nesciunt voluptas corporis blanditiis, sapiente odio rem atque.</p>
-                    <div class="btn">Review Project</div>
-                </div>
+                    <a class="btn" href="https://www.figma.com/design/H5l9AncrXxQXZls6HBuO1Y/Untitled?node-id=0-1&t=r7WDIEjKkTjFXtEj-1" target="_blank">Review Project</a>
+                 </div>
 
                 <div class="project-card">
-                    <img src="" alt="">
+                    <img src="./imgs/Capture d’écran du 2024-12-25 19-28-05.png" alt="">
                     <h3>Project 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem tempora recusandae repudiandae quo libero. Hic, blanditiis consectetur. Accusamus, beatae a obcaecati quisquam nesciunt voluptas corporis blanditiis, sapiente odio rem atque.</p>
-                    <div class="btn">Review Project</div>
+                    <a class="btn" href="http://10.56.8.59/wordpress/wordpress/" target="_blank">Review Project</a>
                 </div>
             </div>
         </section>
 
         <section class="contact" id="contact">
             <h2 class="heading">Contact <span>Me</span></h2>
-            <form action="#">
-                <div class="input-group">
-                    <div class="input-box">
-                        <input type="text" id="name" placeholder="Full Name" >
-                        <input type="email" name="email" id="email" placeholder="Email">
+            <p class="sub-heading">Have a question or want to <span>work together <i class='bx bxs-briefcase-alt-2'></i></span></p>
 
-                    </div>
-                    <div class="input-box">
-                        <input type="number" id="number" placeholder="Phone number">
-                        <input type="text" placeholder="Subject">
-                    </div>
-
-                </div>
-                <div class="input-group2">
-                    <textarea rows="10" name="" id="" placeholder="Your Message"></textarea>
-                    <input type="submit" value="send message" class="btn">
-                </div>
-
+            <form class="form" action="https://getform.io/f/bdrrnpgb" method="POST">
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+            
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            
+                <textarea id="message" name="message" rows="10" placeholder="Your Message" required></textarea>
+            
+                <button type="submit" class="gradient-btn">Send Message</button>
             </form>
+            
 
                   
         </section>
@@ -174,6 +178,7 @@
                 
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills-section">Skills</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="./cv/cv.html">Curriculum Vitae</a></li>
@@ -185,6 +190,7 @@
 
         </footer>
         <script src="./script.js"></script>
+        <script src="./skills.js"></script>
     </div>
 
     
