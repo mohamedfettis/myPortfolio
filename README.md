@@ -44,23 +44,31 @@ Fonctionnalités
 Structure des fichiers
 Voici la structure des fichiers utilisés dans ce projet :
 
-portfolio/
-├── index.html           # Page principale du portfolio
-├── formulaire.html      # Page pour ajouter des compétences
-├── styles.css           # Fichier CSS global
-├── skills.js            # Gestion des compétences (affichage, modification, suppression)
-├── formulaire.js        # Gestion du formulaire (ajout des compétences)
-└── README.txt           # Documentation du projet
 
-Installation et configuration
-1. Clonez ou téléchargez ce projet dans votre environnement local.
-2. Assurez-vous que tous les fichiers (HTML, CSS, JS) sont dans le même répertoire.
-3. Ouvrez le fichier index.html dans un navigateur web pour voir la page principale.
-4. Ouvrez formulaire.html pour ajouter de nouvelles compétences.
+### Description des principaux dossiers et fichiers :
+
+.
+├── competance/
+│   └── comp.html        # Page pour ajouter des compétences
+├── css/
+│   └── style.css        # Styles principaux
+├── cv/
+│   ├── cv.html          # Page CV
+│   └── cv.css           # Styles pour le CV
+├── imgs/                # Images utilisées dans le projet
+├── .htaccess            # Configuration pour les URL
+├── index.html           # Page principale
+├── LICENSE              # Licence du projet
+├── README.md            # Documentation du projet
+├── script.js            # Script principal
+└── skills.js            # Gestion des compétences
+
+
+
 
 Utilisation
 1. Ajouter une compétence :
-   - Ouvrez formulaire.html.
+   - Ouvrez comp.html.
    - Remplissez les champs du formulaire et cliquez sur "Ajouter".
    - La compétence est automatiquement enregistrée et apparaît dans la liste sur index.html.
 
@@ -77,9 +85,5 @@ Technologies utilisées
 - JavaScript : Manipulation du DOM et gestion des compétences.
 - localStorage : Sauvegarde des données localement.
 
-Améliorations futures
-- Ajouter une fonctionnalité de recherche pour filtrer les compétences par nom ou niveau.
-- Intégrer une base de données pour un stockage plus robuste.
-- Ajouter des animations pour rendre l’interface plus dynamique.
 
 Auteur : Mohamed Amokrane Fettis
