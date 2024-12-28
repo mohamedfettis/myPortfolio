@@ -661,7 +661,10 @@ footer ul {
    .bxs-user-check{
         font-size: 15rem;
    }
-
+   #skills-list li{
+    flex-direction: column;
+    gap: 1.5rem;
+}
     
 }
 
