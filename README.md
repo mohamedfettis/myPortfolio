@@ -1,6 +1,10 @@
 # myPortfolio
 A personal portfolio website designed to showcase my skills, experience, and projects.
 
+Lien d'accès local :
+Acueil: http://127.0.0.1:5501/index.html
+Add competance : http://127.0.0.1:5501/competance/comp.html
+
 Lien d'accès au portfolio sur InfinityFree
 
 Portfolio : https://fettis.ct.ws/
