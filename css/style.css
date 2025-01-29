@@ -33,7 +33,6 @@ body{
 header{
     position: fixed;
     width: 100vw;
-    height: 10vh;
     border-bottom: 1px solid var(--main-color);
     top: 0;
     left: 0;
@@ -583,6 +582,10 @@ footer ul {
 @media (max-width:1285px){
     .logo{
         display: none;
+
+    }
+    header{
+        height: 9vh;
 
     }
     .logo-mobile
