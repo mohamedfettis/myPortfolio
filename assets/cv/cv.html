@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - FETTIS Mohamed</title>
+    <style>
+        :root {
+            --bg-color: #080808;
+            --second-bg-color: #101010;
+            --text-color: #fff;
+            --main-color: #d4af37;
+            --color-linear-gradient: linear-gradient(270deg, #ff9d00 10%, #d4af37 70%);
+            --padding-general: 7rem 10%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--padding-general);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--color-linear-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title {
+            color: var(--main-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        section {
+            background: var(--second-bg-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: var(--main-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--main-color);
+        }
+
+        .project-item, .skill-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-item h3 {
+            color: var(--main-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        li::before {
+            content: "• ";
+            color: var(--main-color);
+        }
+
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 5%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FETTIS Mohamed Am</h1>
+            <h2 class="title">INTÉGRATEUR ET DESIGN WEB</h2>
+            <div class="contact-info">
+                <span>95000</span>
+                <a href="mailto:moh.fts98@gmail.com">moh.fts98@gmail.com</a>
+                <a href="#">Site Web</a>
+                <a href="#">Github</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>PROJETS MARQUANTS</h2>
+            <div class="project-item">
+                <h3>Blog Universitaire Moderne (Full-Stack)</h3>
+                <p>Système d’authentification sécurisé + Backend avec PHP<br>
+                + Base de données MySQL.</p>
+            </div>
+            <!-- Repeat for other projects -->
+        </section>
+
+        <section>
+            <h2>COMPÉTENCES CLÉS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Front-End:</h3>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Responsive Design</li>
+                        <li>SEO</li>
+                    </ul>
+                </div>
+                <!-- Repeat for other skill categories -->
+            </div>
+        </section>
+
+        <section>
+            <h2>FORMATION</h2>
+            <div class="education-item">
+                <h3>Licence Professionnelle : Intégration et Design Web</h3>
+                <p>Université de Reims - En cours...</p>
+            </div>
+            <!-- Repeat for other education entries -->
+        </section>
+
+        <section>
+            <h2>LOISIRS</h2>
+            <ul>
+                <li>Suivi et analyse des cryptomonnaies</li>
+                <li>Photographie et retouche d'images</li>
+                <li>Sport : Course à pied</li>
+                <li>Lecture de livres</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

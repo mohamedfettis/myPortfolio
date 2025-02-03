@@ -5,29 +5,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <!-- Meta tags inchangés -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="React JS developer specializing in responsive websites and frontend projects. Explore Mohamed Fettis' portfolio for web development solutions.">
     <meta name="author" content="Mohamed Amokrane Fettis">
     <meta name="keywords" content="web developer, React JS, portfolio, HTML, CSS, JavaScript, Figma, UI/UX design, frontend development">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="canonical" href="https://fettis.ct.ws/">
-    <link rel="preload" 
-    href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
-    as="style" 
-    onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-    </noscript>
-    
-    <link rel="preload" 
-          href="./css/style.css" 
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="./css/style.css">
-    </noscript>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/portfolio/assets/css/style.css">
+
+
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons/css/boxicons.min.css">
+     
+
+    <!-- Favicons -->
     <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="./imgs/favicon.ico">
     
@@ -52,21 +49,7 @@
     <title>Mohamed Fettis - React Developer | Portfolio</title>
 </head>
 <body>
-    <header class="header" role="banner">
-        <h1 class="logo"><a href="#home" class="logo">Mohamed <span>FETTIS</span></a></h1>
-        <h2 class="logo-mobile"><a href="#home" class="logo-mobile">M <span>F</span></a></h2>
-
-        <i class="bx bx-menu" id="menu-icon"></i>
-        <nav class="navbar" aria-label="Main navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills-section">Skills</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="./cv/cv.html">Curriculum Vitae</a>
-        </nav>
-        <a class="gradient-btn" href="#contact">Contact Me</a>
-    </header>
+<?php include 'assets/include/header.php'; ?>
 
     <main class="container" id="main-content" role="main">
         <section class="home" id="home">
@@ -91,8 +74,8 @@
                 </div>
             </div>
             <div class="home-img">
-                <img src="./imgs/d4af37.png" 
-                     alt="Mohamed Fettis - Web Developer Portfolio" 
+                <img src="./assets/imgs/d4af37.png" 
+                     alt="Mohamed Fettis - Développeur Web" 
                      loading="lazy" 
                      width="600">
             </div>
@@ -113,12 +96,7 @@
             </div>
         </section>
 
-        <section style="min-height: auto;" id="skills-section" class="skills-container">
-            <h2>My <span>Skills</span></h2>
-            <ul id="skills-list">
-                <!-- Les compétences ajoutées via JavaScript -->
-            </ul>
-        </section>
+       
 
         <section class="services" id="services">
             <h2 class="heading">My <span>Services</span></h2>
@@ -152,32 +130,21 @@
         <section class="projects" id="projects">
             <h2 class="heading">My <span>Projects</span></h2>
             <div class="project-box">
-                <div class="project-card">
-                    <img src="./imgs/cart-visite-recto.png" 
-                         alt="Business Card Design Project" 
-                         loading="lazy">
-                    <h3>Professional Business Card</h3>
-                    <p>Modern business card design with QR code integration and minimalist layout using Figma.</p>
-                    <div class="btn">Review Project</div>
+                <div class="design-project">
+                    <a href="./assets/include/design.php">
+                        <i class='bx bx-paint'></i>
+                        <h3 style="color: #d4af37;">Design </h3>
+                    </a>
+                </div>
+                <div class="dev-projects">
+                    <a href="./assets/include/development.php">
+                        <i class='bx bx-code-curly'></i>
+                        <h3 style="color: #d4af37;">Development </h3>
+                    </a>
                 </div>
 
-                <div class="project-card">
-                    <img src="./imgs/Capture d’écran du 2024-12-25 19-39-02.png" 
-                         alt="Web Design Project" 
-                         loading="lazy">
-                    <h3>E-commerce Interface</h3>
-                    <p>Complete redesign of an e-commerce interface with improved user journey and mobile-first approach.</p>
-                    <a class="btn" href="https://www.figma.com/design/H5l9AncrXxQXZls6HBuO1Y/Untitled?node-id=0-1&t=r7WDIEjKkTjFXtEj-1" target="_blank">Review Project</a>
-                </div>
 
-                <div class="project-card">
-                    <img src="./imgs/Capture d’écran du 2024-12-25 19-28-05.png" 
-                         alt="WordPress Development Project" 
-                         loading="lazy">
-                    <h3>Corporate Website</h3>
-                    <p>Development of a WordPress site with custom theme and integration of WooCommerce for a local business.</p>
-                    <a class="btn"  target="_blank">Review Project</a>
-                </div>
+               
             </div>
         </section>
 
@@ -194,37 +161,12 @@
             </form>
         </section>
 
-        <footer class="footer" role="contentinfo">
-            <div class="social-icons">
-                <a href="https://github.com/mohamedfettis" target="_blank" rel="nofollow noopener noreferrer" aria-label="GitHub">
-                    <i class='bx bxl-github'></i>
-                </a>
-                <a href="https://www.linkedin.com/in/mohamed-amokrane-fettis-12299729b/" target="_blank" rel="nofollow noopener noreferrer" aria-label="LinkedIn">
-                    <i class='bx bxl-linkedin-square'></i>
-                </a>
-                <a href="https://x.com/moha98fts" target="_blank" rel="nofollow noopener noreferrer" aria-label="Twitter">
-                    <i class='bx bxs-x-square'></i>
-                </a>
-            </div>
-
-            <ul class="list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills-section">Skills</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="./cv/cv.html">Curriculum Vitae</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <p class="copyright">
-                &copy; <span id="copyright-year"></span> Mohamed Fettis. All rights reserved.
-            </p>
-        </footer>
     </main>
 
+    <?php include './assets/include/footer.php'; ?>
+
     <!-- Scripts -->
-    <script src="./script.js"></script>
-    <script src="./skills.js"></script>
+    <script src="./assets/js/script.js"></script>
     
     <!-- Microdata -->
     <script type="application/ld+json">
