@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /autorisation/
+
+# Sitemaps
+Sitemap: https://fettis.ct.ws/sitemap.xml

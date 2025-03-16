@@ -121,7 +121,10 @@ $design_projets = $result->fetch_all(MYSQLI_ASSOC);
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Administration</h1>
-            <a href="/admin/logout.php" class="btn btn-danger">Déconnexion</a>
+            <div>
+                <a href="admin_messages.php" class="btn btn-primary me-2">Gestion des Messages</a>
+                <a href="/admin/logout.php" class="btn btn-danger">Déconnexion</a>
+            </div>
         </div>
 
         <!-- Formulaire pour les projets de développement -->

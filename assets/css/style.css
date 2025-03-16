@@ -409,6 +409,34 @@ h3{
     border: 3px solid transparent;
 
 }
+/* Styles pour les alertes */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alert p {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.alert-success {
+    background-color: rgba(76, 175, 80, 0.2);
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+}
+
+.alert-error {
+    background-color: rgba(244, 67, 54, 0.2);
+    border: 1px solid #F44336;
+    color: #F44336;
+}
+
 .return{
     display: flex;
     flex-direction: row;
