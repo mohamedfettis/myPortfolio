@@ -1,6 +1,9 @@
 <?php
 require_once 'autorisation/db.php';
 
+// Définir l'encodage de la connexion pour les caractères accentués
+mysqli_set_charset($conn, "utf8mb4");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = isset($_POST['name']) ? mysqli_real_escape_string($conn, trim($_POST['name'])) : '';
     $email = isset($_POST['email']) ? mysqli_real_escape_string($conn, trim($_POST['email'])) : '';
@@ -23,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     if (empty($errors)) {
+        // Assurons-nous que le statut est explicitement défini comme 'non traité'
         $sql = "INSERT INTO messages (nom, email, message, date_envoi, statut) 
                 VALUES ('$nom', '$email', '$message', NOW(), 'non traité')";
         

@@ -202,39 +202,51 @@ $design_projets = $result->fetch_all(MYSQLI_ASSOC);
             <div class="card-body">
                 <h3 class="mb-4">Liste des projets de développement</h3>
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
                             <tr>
-                                <th>ID</th>
-                                <th>Titre</th>
-                                <th>Description</th>
-                                <th>Lien</th>
-                                <th>Photo/Video</th>
-                                <th>Actions</th>
+                                <th scope="col" class="d-none d-md-table-cell">ID</th>
+                                <th scope="col">Titre</th>
+                                <th scope="col" class="d-none d-lg-table-cell">Description</th>
+                                <th scope="col" class="d-none d-md-table-cell">Lien</th>
+                                <th scope="col">Photo/Video</th>
+                                <th scope="col" class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($dev_projets as $projet): ?>
                             <tr>
-                                <td><?= htmlspecialchars($projet['id']) ?></td>
-                                <td><?= htmlspecialchars($projet['titre']) ?></td>
-                                <td><?= htmlspecialchars($projet['description']) ?></td>
+                                <td class="d-none d-md-table-cell"><?= htmlspecialchars($projet['id']) ?></td>
                                 <td>
-                                    <a href="<?= htmlspecialchars($projet['lien']) ?>" target="_blank">Voir</a>
+                                    <span class="fw-bold"><?= htmlspecialchars($projet['titre']) ?></span>
+                                    <div class="d-lg-none small text-muted">
+                                        <?= substr(htmlspecialchars($projet['description']), 0, 50) ?>...
+                                    </div>
+                                </td>
+                                <td class="d-none d-lg-table-cell"><?= htmlspecialchars($projet['description']) ?></td>
+                                <td class="d-none d-md-table-cell">
+                                    <a href="<?= htmlspecialchars($projet['lien']) ?>" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-external-link-alt"></i> Voir
+                                    </a>
                                 </td>
                                 <td>
                                     <?php 
                                     $file_extension = strtolower(pathinfo($projet['photo'], PATHINFO_EXTENSION));
-                                    error_log('File extension: ' . $file_extension);
                                     if (in_array($file_extension, ['jpg', 'jpeg', 'png', 'gif'])): ?>
-                                        <img src="<?= htmlspecialchars($projet['photo']) ?>" alt="<?= htmlspecialchars($projet['titre']) ?>" style="max-width: 100px;">
+                                        <img src="<?= htmlspecialchars($projet['photo']) ?>" alt="<?= htmlspecialchars($projet['titre']) ?>" class="img-thumbnail" style="max-width: 80px; max-height: 80px;">
                                     <?php elseif (in_array($file_extension, ['mp4', 'avi', 'mov'])): ?>
-                                        <video src="<?= htmlspecialchars($projet['photo']) ?>" alt="<?= htmlspecialchars($projet['titre']) ?>" style="max-width: 100px;" controls autoplay muted></video>
+                                        <video src="<?= htmlspecialchars($projet['photo']) ?>" alt="<?= htmlspecialchars($projet['titre']) ?>" style="max-width: 80px; max-height: 80px;" controls muted></video>
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="/admin/edit_project.php?type=dev&id=<?= $projet['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
-                                    <a href="/admin/delete_project.php?type=dev&id=<?= $projet['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">Supprimer</a>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a href="/admin/edit_project.php?type=dev&id=<?= $projet['id'] ?>" class="btn btn-sm btn-warning">
+                                            <i class="fas fa-edit"></i> <span class="d-none d-md-inline">Modifier</span>
+                                        </a>
+                                        <a href="/admin/delete_project.php?type=dev&id=<?= $projet['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">
+                                            <i class="fas fa-trash-alt"></i> <span class="d-none d-md-inline">Supprimer</span>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -249,39 +261,51 @@ $design_projets = $result->fetch_all(MYSQLI_ASSOC);
             <div class="card-body">
                 <h3 class="mb-4">Liste des projets de design</h3>
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
                             <tr>
-                                <th>ID</th>
-                                <th>Titre</th>
-                                <th>Description</th>
-                                <th>Lien</th>
-                                <th>Photo/Video</th>
-                                <th>Actions</th>
+                                <th scope="col" class="d-none d-md-table-cell">ID</th>
+                                <th scope="col">Titre</th>
+                                <th scope="col" class="d-none d-lg-table-cell">Description</th>
+                                <th scope="col" class="d-none d-md-table-cell">Lien</th>
+                                <th scope="col">Photo/Video</th>
+                                <th scope="col" class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($design_projets as $projet): ?>
                             <tr>
-                                <td><?= htmlspecialchars($projet['id']) ?></td>
-                                <td><?= htmlspecialchars($projet['titre']) ?></td>
-                                <td><?= htmlspecialchars($projet['description']) ?></td>
+                                <td class="d-none d-md-table-cell"><?= htmlspecialchars($projet['id']) ?></td>
                                 <td>
-                                    <a href="<?= htmlspecialchars($projet['lien']) ?>" target="_blank">Voir</a>
+                                    <span class="fw-bold"><?= htmlspecialchars($projet['titre']) ?></span>
+                                    <div class="d-lg-none small text-muted">
+                                        <?= substr(htmlspecialchars($projet['description']), 0, 50) ?>...
+                                    </div>
+                                </td>
+                                <td class="d-none d-lg-table-cell"><?= htmlspecialchars($projet['description']) ?></td>
+                                <td class="d-none d-md-table-cell">
+                                    <a href="<?= htmlspecialchars($projet['lien']) ?>" target="_blank" class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-external-link-alt"></i> Voir
+                                    </a>
                                 </td>
                                 <td>
                                     <?php 
                                     $file_extension = strtolower(pathinfo($projet['photo'], PATHINFO_EXTENSION));
-                                    error_log('File extension: ' . $file_extension);
                                     if (in_array($file_extension, ['jpg', 'jpeg', 'png', 'gif'])): ?>
-                                        <img src="<?= htmlspecialchars($projet['photo']) ?>" alt="<?= htmlspecialchars($projet['titre']) ?>" style="max-width: 100px;">
+                                        <img src="<?= htmlspecialchars($projet['photo']) ?>" alt="<?= htmlspecialchars($projet['titre']) ?>" class="img-thumbnail" style="max-width: 80px; max-height: 80px;">
                                     <?php elseif (in_array($file_extension, ['mp4', 'avi', 'mov'])): ?>
-                                        <video src="<?= htmlspecialchars($projet['photo']) ?>" alt="<?= htmlspecialchars($projet['titre']) ?>" style="max-width: 100px;" controls autoplay muted></video>
+                                        <video src="<?= htmlspecialchars($projet['photo']) ?>" alt="<?= htmlspecialchars($projet['titre']) ?>" style="max-width: 80px; max-height: 80px;" controls muted></video>
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="/admin/edit_project.php?type=design&id=<?= $projet['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
-                                    <a href="/admin/delete_project.php?type=design&id=<?= $projet['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">Supprimer</a>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a href="/admin/edit_project.php?type=design&id=<?= $projet['id'] ?>" class="btn btn-sm btn-warning">
+                                            <i class="fas fa-edit"></i> <span class="d-none d-md-inline">Modifier</span>
+                                        </a>
+                                        <a href="/admin/delete_project.php?type=design&id=<?= $projet['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">
+                                            <i class="fas fa-trash-alt"></i> <span class="d-none d-md-inline">Supprimer</span>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

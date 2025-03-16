@@ -164,7 +164,7 @@ if (!empty($recherche)) {
         
         .message-content {
             background-color: #f9f9f9;
-            overflow: hidden;
+            over
             border-radius: 6px;
             padding: 15px;
             margin-bottom: 20px;
@@ -180,7 +180,7 @@ if (!empty($recherche)) {
         
         .status-badge {
             position: absolute;
-            top: 5px;
+            top:25px;
             right: 20px;
             margin-right: 6rem;
             padding: 6px 12px;
