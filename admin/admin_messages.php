@@ -35,46 +35,57 @@ $voir_tout = isset($_GET['voir_tout']) ? true : false;
 // Définir l'encodage de la connexion pour les caractères accentués
 mysqli_set_charset($conn, "utf8mb4");
 
-// Requête pour récupérer les messages
-if ($voir_tout) {
-    $sql = "SELECT * FROM messages ORDER BY date_envoi DESC";
-} else {
-    $sql = "SELECT * FROM messages WHERE statut = 'non traité' ORDER BY date_envoi DESC";
+// Recherche
+$recherche = isset($_GET['recherche']) ? trim($_GET['recherche']) : '';
+
+// Construction de la requête de base
+$where_conditions = [];
+
+// Condition pour le statut
+if (!$voir_tout) {
+    $where_conditions[] = "statut = 'non traité'";
 }
+
+// Condition pour la recherche
+if (!empty($recherche)) {
+    $recherche = mysqli_real_escape_string($conn, $recherche);
+    $where_conditions[] = "(nom LIKE '%$recherche%' OR email LIKE '%$recherche%')";
+}
+
+// Construction de la clause WHERE
+$where_clause = '';
+if (!empty($where_conditions)) {
+    $where_clause = "WHERE " . implode(" AND ", $where_conditions);
+}
+
+// Requête complète
+$sql = "SELECT * FROM messages $where_clause ORDER BY date_envoi DESC";
 
 // Pagination
 $messages_par_page = 10;
-$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
 $debut = ($page - 1) * $messages_par_page;
 
 // Compter le nombre total de messages pour la pagination
-$count_sql = str_replace("SELECT *", "SELECT COUNT(*)", $sql);
+$count_sql = "SELECT COUNT(*) FROM messages $where_clause";
 $count_result = mysqli_query($conn, $count_sql);
-$total_messages = mysqli_fetch_array($count_result)[0];
-$total_pages = ceil($total_messages / $messages_par_page);
+
+if ($count_result) {
+    $total_messages = mysqli_fetch_array($count_result)[0];
+    $total_pages = ceil($total_messages / $messages_par_page);
+} else {
+    // En cas d'erreur dans la requête
+    $total_messages = 0;
+    $total_pages = 1;
+    error_log("Erreur SQL: " . mysqli_error($conn));
+}
 
 // Ajouter la limite pour la pagination
 $sql .= " LIMIT $debut, $messages_par_page";
 $result = mysqli_query($conn, $sql);
 
-// Recherche
-$recherche = isset($_GET['recherche']) ? $_GET['recherche'] : '';
-if (!empty($recherche)) {
-    $recherche = mysqli_real_escape_string($conn, $recherche);
-    $sql = "SELECT * FROM messages WHERE 
-            nom LIKE '%$recherche%' OR 
-            email LIKE '%$recherche%' 
-            ORDER BY date_envoi DESC 
-            LIMIT $debut, $messages_par_page";
-    $result = mysqli_query($conn, $sql);
-    
-    // Mettre à jour le comptage pour la pagination
-    $count_sql = "SELECT COUNT(*) FROM messages WHERE 
-                 nom LIKE '%$recherche%' OR 
-                 email LIKE '%$recherche%'";
-    $count_result = mysqli_query($conn, $count_sql);
-    $total_messages = mysqli_fetch_array($count_result)[0];
-    $total_pages = ceil($total_messages / $messages_par_page);
+if (!$result) {
+    error_log("Erreur SQL: " . mysqli_error($conn));
 }
 ?>
 
@@ -164,7 +175,7 @@ if (!empty($recherche)) {
         
         .message-content {
             background-color: #f9f9f9;
-            over
+            overflow: auto;
             border-radius: 6px;
             padding: 15px;
             margin-bottom: 20px;
