@@ -11,7 +11,7 @@ require_once __DIR__ . '/../autorisation/db.php';
 
 // Vérifier si on a l'ID et le type du projet
 if (!isset($_GET['id']) || !isset($_GET['type']) || !in_array($_GET['type'], ['dev', 'design'])) {
-    header('Location: /portfolio/admin/dashboard.php');
+    header('Location: dashboard.php');
     exit;
 }
 
@@ -40,5 +40,5 @@ if ($projet) {
 }
 
 // Rediriger vers le dashboard avec un message
-header('Location: /portfolio/admin/dashboard.php?message=delete_success');
+header('Location: dashboard.php?message=delete_success');
 exit;

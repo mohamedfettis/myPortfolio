@@ -6,7 +6,7 @@ ini_set('session.cookie_httponly', '1');
 ini_set('session.cookie_secure', '1'); 
 ini_set('session.use_strict_mode', '1');
 
-require_once __DIR__ . '/./db.php';
+require_once __DIR__ . 'db.php';
 
 function authenticate(): void {
     if (empty($_SESSION['admin'])) {
@@ -23,7 +23,7 @@ function authenticate(): void {
     
     if (!isset($_SESSION['fingerprint']) || $_SESSION['fingerprint'] !== $fingerprint) {
         session_destroy();
-        header('Location: /admin/login.php?error=hacking');
+        header('Location: /../admin/login.php?error=hacking');
         exit;
     }
 
@@ -35,13 +35,13 @@ function authenticate(): void {
         
         if (!$stmt->fetchColumn()) {
             session_destroy();
-            header('Location: /admin/login.php?error=not_found');
+            header('Location: /../admin/login.php?error=not_found');
             exit;
         }
     } catch(PDOException $e) {
         error_log('Auth error: ' . $e->getMessage());
         session_destroy();
-        header('Location: /admin/login.php?error=db');
+        header('Location: /../admin/login.php?error=db');
         exit;
     }
 }

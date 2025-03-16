@@ -9,6 +9,7 @@
     <!-- Meta tags inchangés -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="IRI6h87J6trbJbzOhvsIWdihhbZdMGDywSpZQgbogD4" />
     <meta name="description" content="React JS developer specializing in responsive websites and frontend projects. Explore Mohamed Fettis' portfolio for web development solutions.">
     <meta name="author" content="Mohamed Amokrane Fettis">
     <meta name="keywords" content="web developer, React JS, portfolio, HTML, CSS, JavaScript, Figma, UI/UX design, frontend development">
@@ -17,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/portfolio/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 
     <!-- Boxicons -->
@@ -46,14 +47,15 @@
     <!-- Preconnects -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://unpkg.com">
-    <title>Mohamed Fettis - React Developer | Portfolio</title>
+    <title>Mohamed Fettis | Développeur Frontend React JS</title>
 </head>
 <body>
-<?php include 'assets/include/header.php'; ?>
+<?php include 'include/header.php'; ?>
 
     <main class="container" id="main-content" role="main">
-        <section class="home" id="home">
+        <section class="home" id="home" aria-labelledby="home-heading" itemscope itemtype="https://schema.org/Person">
             <div class="home-content">
+                <h1 id="home-heading" class="main-title">Mohamed Fettis | Développeur Frontend React JS</h1>
                 <h2>Hi, It's <span>Fettis</span></h2>
                 <h3>I'm <span>Web Developer</span></h3>
                 <p>I am a graduate of a professional degree in Web Integration and Design I specialize in creating responsive, user-friendly websites using HTML, CSS, JavaScript, and design tools like Figma. My goal is to deliver high-quality web solutions that combine functionality with aesthetics.</p>
@@ -74,25 +76,27 @@
                 </div>
             </div>
             <div class="home-img">
-                <img src="./assets/imgs/d4af37.png" 
-                     alt="Mohamed Fettis - Développeur Web" 
+                <img src="./assets/imgs/photoID.png" 
+                     alt="Photo de Mohamed Fettis, développeur web" 
                      loading="lazy" 
-                     width="600">
+                     width="600"
+                     height="auto"
+                     itemprop="image">
             </div>
         </section>
 
-        <section class="about" id="about">
-            <div class="about-img">
+        <section class="about" id="about" aria-labelledby="about-heading" itemscope itemtype="https://schema.org/AboutPage">
+            <div class="about-img" aria-hidden="true">
                 <i class='bx bxs-user-check'></i>
             </div>
             <div class="about-content">
-                <h2>About <span>Me</span></h2>
-                <p>
-                    Hello, my name is Mohamed Amokrane Fettis, and I am a graduate of a professional degree in Web Integration and Design.
-                    I specialize in creating responsive, user-friendly websites using HTML, CSS, JavaScript, and design tools like Figma. My goal is to deliver high-quality web solutions that combine functionality with aesthetics.
-                    Feel free to explore my portfolio to see my work and achievements!
-                </p>
-                <a href="#" class="btn">Read More</a>
+                <h2 id="about-heading" itemprop="name">About <span>Me</span></h2>
+                <div itemprop="text">
+                    <p>
+                    Hello, my name is Mohamed Amokrane Fettis, and I hold a professional bachelor's degree in Web Integration and Design. I specialize in creating responsive and user-friendly websites using HTML, CSS, JavaScript, and design tools like Figma. My goal is to deliver high-quality web solutions that combine functionality and aesthetics. Feel free to explore my portfolio to see my work and projects!
+                    </p>
+                </div>
+                <a href="#" class="btn" aria-label="En savoir plus sur mon parcours et mes compétences">Learn more</a>
             </div>
         </section>
 
@@ -131,15 +135,15 @@
             <h2 class="heading">My <span>Projects</span></h2>
             <div class="project-box">
                 <div class="design-project">
-                    <a href="./assets/include/design.php">
+                    <a href="/design">
                         <i class='bx bx-paint'></i>
-                        <h3 style="color: #d4af37;">Design </h3>
+                        <h3 style="color: #A3E635;">Design </h3>
                     </a>
                 </div>
                 <div class="dev-projects">
-                    <a href="./assets/include/development.php">
+                    <a href="/development">
                         <i class='bx bx-code-curly'></i>
-                        <h3 style="color: #d4af37;">Development </h3>
+                        <h3 style="color: #A3E635;">Development </h3>
                     </a>
                 </div>
 
@@ -163,39 +167,9 @@
 
     </main>
 
-    <?php include './assets/include/footer.php'; ?>
+    <?php include 'include/footer.php'; ?>
 
-    <!-- Scripts -->
-    <script src="./assets/js/script.js"></script>
-    
-    <!-- Microdata -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Mohamed Amokrane Fettis",
-        "jobTitle": "Fullstack Web Developer",
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "Web Development Training Institute"
-        },
-        "url": "https://fettis.ct.ws/",
-        "sameAs": [
-            "https://github.com/mohamedfettis",
-            "https://www.linkedin.com/in/mohamed-amokrane-fettis-12299729b/"
-        ],
-        "image": "https://fettis.ct.ws/imgs/og-image.jpg",
-        "description": "Web developer specializing in React JS and modern web integration",
-        "email": "moh.fts98@gmail.com",
-        "address": {
-            "@type": "rue michel goudechoux sannois 95110",
-            "addressLocality": "Paris",
-            "addressCountry": "FR"
-        }
-    }
-    </script>
-
-    <!-- Google Analytics -->
+    <!-- Google Analytics - Chargé de manière asynchrone -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EXGZ6DQJ3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -203,6 +177,58 @@
         gtag('js', new Date());
         gtag('config', 'G-4EXGZ6DQJ3');
     </script>
+    
+    <!-- Scripts non bloquants avec defer -->
+    <script defer src="./assets/js/script.js"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script defer>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker enregistré avec succès:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Erreur d\'enregistrement du Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- Microdata -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mohamed Amokrane Fettis",
+        "jobTitle": "Développeur Web Frontend",
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Institut de Formation en Développement Web"
+        },
+        "url": "https://fettis.ct.ws/",
+        "sameAs": [
+            "https://github.com/mohamedfettis",
+            "https://www.linkedin.com/in/mohamed-amokrane-fettis-12299729b/",
+            "https://x.com/moha98fts"
+        ],
+        "image": "https://fettis.ct.ws/imgs/og-image.jpg",
+        "description": "Développeur web spécialisé en React JS et intégration web moderne",
+        "email": "moh.fts98@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "rue michel goudechoux",
+            "addressLocality": "Sannois",
+            "postalCode": "95110",
+            "addressRegion": "Ile-de-France",
+            "addressCountry": "FR"
+        },
+        "knowsAbout": ["HTML5", "CSS3", "JavaScript", "React", "UI/UX Design", "Figma", "Responsive Web Design"]
+    }
+    </script>
+
+
     <script>
         // get date year
         const date = new Date();

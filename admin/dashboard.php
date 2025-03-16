@@ -3,7 +3,7 @@ session_start();
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['admin'])) {
-    header('Location: /portfolio/admin/login.php');
+    header('Location: /login.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ function handle_file_upload($type) {
     $new_filename = uniqid($type.'_') . '.' . $file_extension;
     $upload_path = $upload_dir . $new_filename;
     if (move_uploaded_file($_FILES[$type.'_photo']['tmp_name'], $upload_path)) {
-        return '/portfolio/assets/imgs/projects/' . $new_filename;
+        return '/../assets/imgs/projects/' . $new_filename;
     }
     return false;
 }
@@ -85,11 +85,13 @@ $result = $stmt->get_result();
 $design_projets = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/portfolio/assets/css/admin.css" rel="stylesheet">
+    <link href="/../assets/css/admin.css" rel="stylesheet">
     <style>
         .notification {
             position: fixed;
@@ -119,7 +121,7 @@ $design_projets = $result->fetch_all(MYSQLI_ASSOC);
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Administration</h1>
-            <a href="/portfolio/admin/logout.php" class="btn btn-danger">Déconnexion</a>
+            <a href="/admin/logout.php" class="btn btn-danger">Déconnexion</a>
         </div>
 
         <!-- Formulaire pour les projets de développement -->
@@ -228,8 +230,8 @@ $design_projets = $result->fetch_all(MYSQLI_ASSOC);
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="/portfolio/admin/edit_project.php?type=dev&id=<?= $projet['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
-                                    <a href="/portfolio/admin/delete_project.php?type=dev&id=<?= $projet['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">Supprimer</a>
+                                    <a href="/admin/edit_project.php?type=dev&id=<?= $projet['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
+                                    <a href="/admin/delete_project.php?type=dev&id=<?= $projet['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">Supprimer</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -275,8 +277,8 @@ $design_projets = $result->fetch_all(MYSQLI_ASSOC);
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="/portfolio/admin/edit_project.php?type=design&id=<?= $projet['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
-                                    <a href="/portfolio/admin/delete_project.php?type=design&id=<?= $projet['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">Supprimer</a>
+                                    <a href="/admin/edit_project.php?type=design&id=<?= $projet['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
+                                    <a href="/admin/delete_project.php?type=design&id=<?= $projet['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">Supprimer</a>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
@@ -288,6 +290,6 @@ $design_projets = $result->fetch_all(MYSQLI_ASSOC);
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/portfolio/assets/js/admin.js"></script>
+    <script src="/../assets/js/admin.js"></script>
 </body>
 </html>

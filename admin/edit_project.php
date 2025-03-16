@@ -3,7 +3,7 @@ session_start();
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['admin'])) {
-    header('Location: /portfolio/admin/login.php');
+    header('Location: /login.php');
     exit;
 }
 
@@ -11,7 +11,7 @@ require_once __DIR__ . '/../autorisation/db.php';
 
 // Vérifier si on a l'ID et le type du projet
 if (!isset($_GET['id']) || !isset($_GET['type']) || !in_array($_GET['type'], ['dev', 'design'])) {
-    header('Location: /portfolio/admin/dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 
@@ -27,7 +27,7 @@ $result = $stmt->get_result();
 $projet = $result->fetch_assoc();
 
 if (!$projet) {
-    header('Location: /portfolio/admin/dashboard.php');
+    header('Location: /dashboard.php');
     exit;
 }
 
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (file_exists($old_photo_path)) {
                     unlink($old_photo_path);
                 }
-                $photo = '/portfolio/assets/imgs/projects/' . $new_filename;
+                $photo = '/../assets/imgs/projects/' . $new_filename;
                 
                 $stmt = $conn->prepare("UPDATE $table SET titre = ?, description = ?, lien = ?, photo = ? WHERE id = ?");
                 $stmt->bind_param("ssssi", $titre, $description, $lien, $photo, $id);
@@ -80,8 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier le projet</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -89,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Modifier le projet</h1>
-            <a href="/portfolio/admin/dashboard.php" class="btn btn-secondary">Retour au dashboard</a>
+            <a href="dashboard.php" class="btn btn-secondary">Retour au dashboard</a>
         </div>
 
         <div class="card shadow">

@@ -16,7 +16,7 @@ if (isset($_COOKIE[session_name()])) {
 session_destroy();
 
 // Rediriger vers la page de connexion avec un message
-$redirect_url = '/portfolio/admin/login.php';
+$redirect_url = '/admin/login.php';
 if ($was_logged_in) {
     $redirect_url .= '?message=logout_success';
 }
